@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-const { merge } = require('webpack-merge')
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 
-const common = require('./webpack.common')
-const paths = require('./paths')
+const common = require('./webpack.common');
+const paths = require('./paths');
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -30,7 +30,18 @@ module.exports = merge(common, {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true, importLoaders: 1, modules: true },
+            options: {
+              sourceMap: true,
+              importLoaders: 1,
+              modules: {
+                mode: 'local',
+                auto: true,
+                exportGlobals: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                namedExport: true,
+                exportOnlyLocals: false,
+              },
+            },
           },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
@@ -39,7 +50,7 @@ module.exports = merge(common, {
       // TypeScript Loader
       {
         test: /\.ts$/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         exclude: /node_modules/,
       },
     ],
@@ -49,4 +60,4 @@ module.exports = merge(common, {
     // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
   ],
-})
+});

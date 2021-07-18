@@ -6,4 +6,4 @@ module.exports = {
   // Run Stylelint on changes to CSS/SCSS/LESS files
   '**/*.(css|scss|sass|less|tsx|ts|js)': filenames =>
     `yarn stylelint ${filenames.join(' ')}`,
-}
+};
