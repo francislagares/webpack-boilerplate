@@ -25,11 +25,13 @@
     "no-console": 1,
     "no-template-curly-in-string": 1,
     "no-self-compare": 1,
+    "no-multi-spaces": "error",
     "import/prefer-default-export": 0,
     "func-names": [1, "as-needed"],
     "arrow-body-style": 1,
-    "semi": [1, "never"],
-    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }]
+    "semi": "error",
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
+    "prettier/prettier": "error"
   },
   "env": {
     "browser": true,
