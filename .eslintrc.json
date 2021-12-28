@@ -26,11 +26,25 @@
     "no-template-curly-in-string": 1,
     "no-self-compare": 1,
     "no-multi-spaces": "error",
-    "import/prefer-default-export": 0,
     "func-names": [1, "as-needed"],
     "arrow-body-style": 1,
     "semi": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
     "prettier/prettier": "error"
   },
   "env": {
